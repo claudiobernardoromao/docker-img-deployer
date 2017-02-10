@@ -43,7 +43,7 @@ import (
 
 	"golang.org/x/net/context"
 
-	t "bitbucket.org/apprenda/docker-img-deployer/types"
+	"github.com/claudiobernardoromao/docker-img-deployer/types"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/network"
@@ -297,8 +297,12 @@ func containerCreate(i *t.Instance) error {
 
 func imagePull(cli *client.Client, ref string) error {
 	log.Printf("Pulling %q from the registry...\n", ref)
+	fmt.Println("entrando na funcao para baixar a imagem")
+	fmt.Println(ref)
 	resp, err := cli.ImagePull(context.Background(), ref, types.ImagePullOptions{})
 	if err != nil {
+		fmt.Println("problemas para baixar a imagem")
+		fmt.Println(err)
 		return err
 	}
 	defer resp.Close()
