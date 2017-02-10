@@ -7,3 +7,5 @@ export GOOS=linux
 export GOARCH=amd64
 glide install -v
 go build -o apprenda/platform-events/bin/docker-image
+cp apprenda/platform-events/bin/docker-image /tmp/go/apprenda_instance/deployer/platform-events/
+ls -al /tmp/go/apprenda_instance/deployer/platform-events/
