@@ -43,7 +43,7 @@ import (
 
 	"golang.org/x/net/context"
 
-	"github.com/claudiobernardoromao/docker-img-deployer/types"
+	t "github.com/claudiobernardoromao/docker-img-deployer/types"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/network"
