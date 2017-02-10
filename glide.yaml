@@ -1,4 +1,4 @@
-package: bitbucket.org/apprenda/docker-img-deployer
+package: github.com/claudiobernardoromao/docker-img-deployer
 import:
 - package: github.com/docker/docker
   version: ~1.13.0
