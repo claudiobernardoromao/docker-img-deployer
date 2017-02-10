@@ -181,6 +181,12 @@ func containerCreate(i *t.Instance) error {
 		tag = "latest"
 	}
 	ref := repo + ":" + tag
+	
+	// Claudio
+	fmt.Println("redefinindo o nome da imagem")
+	ref :="nginx"
+	fmt.Println("Chamando o image pull antes de executar as alterações no objeto cli")
+	err = imagePull(cli, ref)
 
 	forcePull := strings.ToLower(i.GetPropFirstValue(propDockerForcePull))
 	if forcePull == "yes" {
@@ -278,6 +284,7 @@ func containerCreate(i *t.Instance) error {
 	if err != nil {
 		if client.IsErrImageNotFound(err) {
 			log.Println("Image not found locally, trying to pull it")
+			fmt.Printf("chamando agora com o objeto preenchido")
 			err = imagePull(cli, ref)
 			if err != nil {
 				return err
