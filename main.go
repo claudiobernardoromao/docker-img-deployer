@@ -185,6 +185,7 @@ func containerCreate(i *t.Instance) error {
 	// Claudio
 	fmt.Println("redefinindo o nome da imagem")
 	ref = "nginx:latest"
+	fmt.Println(ref)
 	fmt.Println("Chamando o image pull antes de executar as alterações no objeto cli")
 	err = imagePull(cli, ref)
 
